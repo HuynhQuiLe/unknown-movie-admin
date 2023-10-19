@@ -1,0 +1,39 @@
+.fixed-top {
+  z-index: 1;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 10px 11px;
+  border: none;
+  font-size: 0.875rem;
+  color: white;
+  background-color: #2a3038;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.modal-dialog .react-datepicker__input-container input {
+  color: black;
+  background-color: white;
+  padding: 0.4375rem 0.75rem;
+  border: 1px solid black;
+}
+
+/* ////// */
+.react-datetime-picker {
+  padding: 5px 12px;
+  border-radius: 3px;
+  background: white;
+  color: black;
+}
+
+.react-datetime-picker__wrapper {
+  border: unset !important;
+}
+.react-datetime-picker--disabled {
+  cursor: not-allowed;
+}
