@@ -13,10 +13,18 @@ export const login = (user) => {
     try {
       const { data } = await loginAPI(user);
 
-      dispatch({
-        type: LOGIN_SUCCESS,
-        payload: data.user,
-      });
+      if (data.user.chucVu === "ADMIN" || data.user.chucVu === "Manager") {
+        dispatch({
+          type: LOGIN_SUCCESS,
+          payload: data.user,
+        });
+      } else {
+        dispatch({
+          type: LOGIN_FAILURE,
+          payload:
+            "Bạn không có quyền truy cập. Vui lòng liên hệ ADMIN để được phân quyền.",
+        });
+      }
     } catch (error) {
       console.log(error);
       dispatch({

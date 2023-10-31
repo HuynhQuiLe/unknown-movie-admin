@@ -1,6 +1,7 @@
 import { userLocalStorage } from "../../../services/localService";
 import {
   LOGIN_FAILURE,
+  LOGIN_FAILURE_ROLE,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
 } from "../../constants/user/loginConstants";
@@ -20,8 +21,23 @@ export const loginReducer = (state = initialState, { type, payload }) => {
     case LOGIN_SUCCESS:
       userLocalStorage.set(payload);
       return { ...state, user: payload, isLoading: false };
+
     case LOGIN_FAILURE:
       return { ...state, isLoading: false, error: payload };
+
+    case LOGIN_FAILURE_ROLE:
+      const user = userLocalStorage.get();
+      if (user) {
+        userLocalStorage.remove();
+      }
+      window.location.href = "/login";
+      return {
+        ...state,
+        isLoading: false,
+        user: null,
+        error:
+          "Bạn không có quyền truy cập. Vui lòng liên hệ ADMIN để được phân quyền.",
+      };
 
     case LOGOUT:
       userLocalStorage.remove();

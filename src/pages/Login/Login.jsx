@@ -16,11 +16,13 @@ const Login = () => {
 
   const logIn = async (event) => {
     event.preventDefault();
-
     dispatch(login(userLogin));
   };
 
-  if (user) {
+  if (
+    (user && user.chucVu === "ADMIN") ||
+    (user && user.chucVu === "Manager")
+  ) {
     return (window.location.href = "/");
   }
 
@@ -50,7 +52,7 @@ const Login = () => {
           value={userLogin.taiKhoan}
           style={{
             padding: "10px 15px",
-            width: "100%",
+            width: "400px",
             marginBottom: 10,
             borderRadius: 3,
             border: "none",
@@ -65,7 +67,7 @@ const Login = () => {
           value={userLogin.matKhau}
           style={{
             padding: "10px 15px",
-            width: "100%",
+            width: "400px",
             borderRadius: 3,
             border: "none",
             marginBottom: 10,
@@ -78,12 +80,14 @@ const Login = () => {
 
         <button
           type="submit"
+          id="btn-dangnhap"
           style={{
             padding: "7px 10px",
-            width: 100,
+            // width: 100,
             borderRadius: 3,
             border: "none",
             marginTop: 30,
+            transition: "all .1s cubic-bezier(0.42, 0, 0.58, 1.0)",
           }}
         >
           Đăng nhập
