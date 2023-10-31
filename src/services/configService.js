@@ -1,16 +1,19 @@
-export const USER_BASE_URL = "http://localhost:6868/users";
+// const BASE_URL = "http://localhost:6868/";
+const BASE_URL = "https://unknown-movie.adaptable.app/";
 
-export const CAROUSEL_BASE_URL = "http://localhost:6868/carousels";
+export const USER_BASE_URL = `${BASE_URL}users`;
 
-export const MOVIE_BASE_URL = "http://localhost:6868/movies";
+export const CAROUSEL_BASE_URL = `${BASE_URL}carousels`;
 
-export const THEATER_BASE_URL = "http://localhost:6868/theaters";
+export const MOVIE_BASE_URL = `${BASE_URL}movies`;
 
-export const BRANCH_BASE_URL = "http://localhost:6868/branches";
+export const THEATER_BASE_URL = `${BASE_URL}theaters`;
 
-export const SCHEDULE_BASE_URL = "http://localhost:6868/schedules";
+export const BRANCH_BASE_URL = `${BASE_URL}branches`;
 
-export const UPLOAD_IMAGES_URL = "http://localhost:6868/upload-images";
+export const SCHEDULE_BASE_URL = `${BASE_URL}schedules`;
+
+export const UPLOAD_IMAGES_URL = `${BASE_URL}upload-images`;
 
 const TOKEN = "";
 
